@@ -21,3 +21,8 @@ def predict_sentiment(data: ReviewRequest):
     prediction = model.predict(X)[0]
     label = "positive" if prediction == 1 else "negative"
     return {"sentiment": label}
+
+@app.get("/")
+def root():
+    return {"message": "Sentiment API is running!"}
+
